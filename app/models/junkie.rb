@@ -1,0 +1,2 @@
+class Junkie < ApplicationRecord
+end
