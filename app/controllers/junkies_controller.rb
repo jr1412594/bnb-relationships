@@ -4,21 +4,20 @@ class JunkiesController < ApplicationController
         @junkies = Junkie.all
     end
 
+    def show
+        @junkie = Junkie.find(params[:id])
+    end
+
     def create
-        @junkie = Junkie.new(junkie_params)
-        if @junkie.valid?
-            @junkie.save
-            render json: @junkie
-            # render('junkies/show')
-        else
-        render json: :errors
-        end
+    #   @junkie = Junkie.create(name: params[:name], job: params[:job])
+      @junkie = Junkie.create(junk_params)
+      render('junkies/show')
     end
 
     private
 
-    def junkie_params
-        params.require(:junkie).permit(:name, :job)
+    def junk_params
+        params.require(:junkie).permit(:job, :name)
     end
 
 end

@@ -1,0 +1,1 @@
+json.junkies @junkies, partial: 'partials/junkie', as: :junkie
